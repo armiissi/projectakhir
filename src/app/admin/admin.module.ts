@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
+import { MaterialDesign } from '../material/material.module';
+import { IncomeComponent } from './income/income.component';
 
 const routes: Routes = [
   {
@@ -12,6 +14,15 @@ const routes: Routes = [
       {
         path:'dashboard',
         component:DashboardComponent
+      },
+      {
+        path:'income',
+        component:IncomeComponent
+      },
+      {
+        path:'',
+        pathMatch:'full',
+        redirectTo:'/admin/dashboard' 
       }
     ]
   }
@@ -20,11 +31,13 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AdminComponent,
-    DashboardComponent
+    DashboardComponent,
+    IncomeComponent
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MaterialDesign
   ]
 })
 export class AdminModule { }
