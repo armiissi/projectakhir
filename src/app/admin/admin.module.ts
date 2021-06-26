@@ -8,6 +8,7 @@ import { IncomeComponent } from './income/income.component';
 import { IncomeDetailComponent } from './income-detail/income-detail.component';
 import { ChargeComponent } from './charge/charge.component';
 import { ChargeDetailComponent } from './charge-detail/charge-detail.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -47,7 +48,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    MaterialDesign
+    MaterialDesign,
+    FormsModule
   ]
 })
 export class AdminModule { }

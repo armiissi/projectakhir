@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { IncomeDetailComponent } from '../income-detail/income-detail.component';
 
 @Component({
   selector: 'app-income',
@@ -9,7 +11,9 @@ export class IncomeComponent implements OnInit {
   title:any;
   book:any={};
   books:any=[];
-  constructor() { 
+  constructor(
+    public dialog:MatDialog
+  ) { 
 
   }
 
@@ -43,6 +47,30 @@ export class IncomeComponent implements OnInit {
         note:'Bonus bulan mei'
       }
     ];
+  }
+
+  incomeDetail(data: any,idx: number)
+ {
+   let dialog=this.dialog.open(IncomeDetailComponent, {
+     width:'400px',
+     data:data
+   });
+   dialog.afterClosed().subscribe(res=>{
+     if(res)
+     {
+        //jika idx=-1 (penambahan data baru) maka tambahkan data
+       if(idx==-1)this.books.push(res);      
+        //jika tidak maka perbarui data  
+       else this.books[idx]=data; 
+     }
+   })
+  }
+
+  deleteCharge(idx: any)
+  {
+    var conf=confirm('Delete Item?');
+    if(conf)
+    this.books.splice(idx,1);
   }
 
 }

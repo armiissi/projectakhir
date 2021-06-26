@@ -1,1 +1,25 @@
-<p>income-detail works!</p>
+<h3 mat-dialog-title>
+    Detail Product
+</h3>
+<div mat-dialog-content>
+    <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>Jumlah</mat-label>
+        <input matInput [(ngModel)]="data.amount">
+    </mat-form-field>
+    <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>Kategori</mat-label>
+        <input matInput [(ngModel)]="data.category">
+    </mat-form-field>
+    <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>Tanggal</mat-label>
+        <input matInput [(ngModel)]="data.date">
+    </mat-form-field>
+    <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>Note</mat-label>
+        <input matInput [(ngModel)]="data.note">
+    </mat-form-field>
+</div>
+<div mat-dialog-action align="end">
+<button mat-button mat-dialog-close>Batal</button>
+<button mat-flat-button (click)="saveData()">Simpan</button>
+</div>

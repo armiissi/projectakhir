@@ -1,5 +1,6 @@
+import { Inject } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-income-detail',
@@ -8,9 +9,18 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class IncomeDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public dialogRef:MatDialogRef<IncomeDetailComponent>,
+   @Inject(MAT_DIALOG_DATA) public data: any
+  ) { }
 
   ngOnInit(): void {
   }
+
+  saveData()
+  {
+    this.dialogRef.close(this.data);
+  }
+
 
 }
