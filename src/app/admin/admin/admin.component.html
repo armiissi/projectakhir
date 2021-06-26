@@ -4,7 +4,7 @@
     <button mat-icon-button (click)="sidenav.toggle()">
     <mat-icon>menu</mat-icon>
     </button>
-    <span>BookKeeping</span>
+    <span><mat-list-item routerLink="/admin/dashboard">BookKeeping</mat-list-item></span>
     <div class="uk-width-expand"></div>
     <small>LogOut</small>
     </mat-toolbar>
@@ -21,15 +21,15 @@
       [fixedBottomGap]="0">
 
       <mat-nav-list>
-          <mat-list-item routerLink="/admin/product">
-              <mat-icon matListIcon>dashboard</mat-icon>
-              <h3 matLine>dashboard</h3>
-          </mat-list-item>
-      </mat-nav-list>
+        <mat-list-item routerLink="/admin/charge">
+            <mat-icon matListIcon>vertical_align_top</mat-icon>
+            <h3 matLine>Charge</h3>
+        </mat-list-item>
+    </mat-nav-list>
       <mat-nav-list>
         <mat-list-item routerLink="/admin/income">
-            <mat-icon matListIcon>dashboard</mat-icon>
-            <h3 matLine>income</h3>
+            <mat-icon matListIcon>vertical_align_bottom</mat-icon>
+            <h3 matLine>Income</h3>
         </mat-list-item>
     </mat-nav-list>
 

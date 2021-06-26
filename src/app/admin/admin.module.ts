@@ -5,6 +5,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialDesign } from '../material/material.module';
 import { IncomeComponent } from './income/income.component';
+import { IncomeDetailComponent } from './income-detail/income-detail.component';
+import { ChargeComponent } from './charge/charge.component';
+import { ChargeDetailComponent } from './charge-detail/charge-detail.component';
 
 const routes: Routes = [
   {
@@ -20,6 +23,10 @@ const routes: Routes = [
         component:IncomeComponent
       },
       {
+        path:'charge',
+        component:ChargeComponent
+      },
+      {
         path:'',
         pathMatch:'full',
         redirectTo:'/admin/dashboard' 
@@ -32,7 +39,10 @@ const routes: Routes = [
   declarations: [
     AdminComponent,
     DashboardComponent,
-    IncomeComponent
+    IncomeComponent,
+    IncomeDetailComponent,
+    ChargeComponent,
+    ChargeDetailComponent
   ],
   imports: [
     CommonModule,

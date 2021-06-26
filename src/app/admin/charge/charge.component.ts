@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-income',
-  templateUrl: './income.component.html',
-  styleUrls: ['./income.component.scss']
+  selector: 'app-charge',
+  templateUrl: './charge.component.html',
+  styleUrls: ['./charge.component.scss']
 })
-export class IncomeComponent implements OnInit {
+export class ChargeComponent implements OnInit {
   title:any;
   book:any={};
   books:any=[];
-  constructor() { 
-
-  }
+  constructor() { }
 
   ngOnInit(): void {
     this.title='Income';
@@ -31,18 +29,19 @@ export class IncomeComponent implements OnInit {
     //4. memperbarui koleksi books
     this.books=[
       {
-        amount:'300.000',
-        category:'Gaji',
-        date:'22-5-2021',
-        note:'gaji bulan mei'
+        amount:'750.000',
+        category:'Sewa/Kontrak',
+        date:'01-5-2021',
+        buyment:'Tunai',
+        note:'bayar kost bulan5'
       },
       {
-        amount:'100.000',
-        category:'Bous',
-        date:'22-5-2021',
-        note:'Bonus bulan mei'
-      }
+        amount:'750.000',
+        category:'Sewa/Kontrak',
+        date:'01-6-2021',
+        buyment:'Tunai',
+        note:'bayar kost bulan6'
+      },
     ];
   }
-
 }

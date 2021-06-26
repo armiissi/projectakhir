@@ -5,7 +5,7 @@
     <mat-card-content>
         <div class="uk-flex">
             <span class="uk-width-expand"></span>
-            <button mat-flat-button color="primary">Add Income</button>
+            <button mat-flat-button color="primary">Add Charge</button>
         </div>
         <table class="uk-table uk-table-middle uk-table-divider">
             <thead>                
@@ -13,6 +13,7 @@
                 <th>Jumlah</th>
                 <th>Kategori</th>
                 <th>Tanggal</th>
+                <th>Pembayaran</th>
                 <th>Note</th>
                 <th align="right">#</th>
             </thead>
@@ -22,6 +23,7 @@
                     <td>{{book.amount}}</td>
                     <td>{{book.category}}</td>
                     <td>{{book.date}}</td>
+                    <td>{{book.buyment}}</td>
                     <td>{{book.note}}</td>
                     <td align="right">
                         <button mat-button color="primary" >Edit</button>
